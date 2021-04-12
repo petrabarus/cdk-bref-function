@@ -13,7 +13,7 @@ export class CdkStack extends cdk.Stack {
     const asset = lambda.Code.fromAsset(assetPath);
     
     const lambdaFunc = new lambda.Function(this, 'LambdaFunction', {
-      runtime: lambda.Runtime.PROVIDED,
+      runtime: lambda.Runtime.PROVIDED_AL2,
       handler: 'src/index.php',
       layers: [
         lambda.LayerVersion.fromLayerVersionArn(this, 'BrefPHPLayer', brefLayerVersion),
